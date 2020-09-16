@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Reservations</h1>
+    <h1>{{name}}</h1>
   </div>
 </template>
 
@@ -8,8 +8,11 @@
 import axios from 'axios'
 
 export default {
-  name: 'Reservations',
-
+  data () {
+    return {
+      name: 'Reservations',
+    }
+  },
   async mounted() {
     try {
       await axios.get('http://localhost:9090/test')
